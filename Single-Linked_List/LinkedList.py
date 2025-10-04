@@ -1,6 +1,7 @@
 from Node import Node
 
 class LinkedList:
+    #构造函数
     def __init__(self):
         self.head = Node(None)
 
@@ -12,10 +13,12 @@ class LinkedList:
 
     #遍历链表
     def toString(self):
+        list = []
         cur = self.head.next
         while (cur):
-            print(cur.data, end=" ")
+            list.append(str(cur.data))
             cur = cur.next
+        return "->".join(list)
 
     #获取尾节点
     def getTail(self) -> Node:
@@ -91,6 +94,18 @@ class LinkedList:
             curr = nextNode #指针重新指向下一个节点
 
         self.head.next = None #释放头节点的资源
+
+    #反转链表
+    def reverse(self):
+        first = None #指针1
+        second = self.head.next #指针2
+        while(second):
+            third = second.next #指针3
+            second.next = first #把节点的next换位它的前一个节点
+            first = second
+            second = third
+        self.head.next = first
+        return self
 
 
 
