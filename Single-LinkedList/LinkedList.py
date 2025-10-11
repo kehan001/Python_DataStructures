@@ -1,7 +1,7 @@
 from Node import Node
 
 class LinkedList:
-    #构造函数
+    #构造方法，即创建头节点
     def __init__(self):
         self.head = Node(None)
 
@@ -54,7 +54,7 @@ class LinkedList:
         prev.next = newNode
 
     #删除节点
-    def delete(self, pos):
+    def remove(self, pos):
         if(pos < 0):
             print("This position is not available")
             raise IndexError("Position cannot be negative")
