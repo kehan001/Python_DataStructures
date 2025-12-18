@@ -37,7 +37,6 @@ class LinkedList:
             tailNode.next = newNode
             newNode.prev = tailNode
 
-
     #获取尾节点
     def getTail(self):
         curr = self.head.next
@@ -53,7 +52,6 @@ class LinkedList:
             curr = curr.next
             len += 1
         return len
-
 
     #插入数据，思路也和单链表相同
     def insert(self, pos, data):
@@ -81,7 +79,6 @@ class LinkedList:
         first = self.head
         for i in range(pos):
             first = first.next
-
 
         second = first.next
         if(second.next):
